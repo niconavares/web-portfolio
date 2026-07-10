@@ -1,9 +1,17 @@
-// Motion del hero: aparición orquestada (Motion One) + efectos de scroll (manual, rAF).
-// El parallax/efectos se calculan a mano desde scrollY / alto del hero: robusto y
-// sin depender de la firma de scroll() de la librería. Motion One solo para la entrada.
-import { animate } from 'motion';
-
+// Motion del hero: aparición orquestada + efectos de scroll. SIN librerías:
+// la entrada usa la Web Animations API nativa (element.animate) y el scroll
+// se calcula a mano con rAF. Respeta prefers-reduced-motion.
 const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const EASE = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
+function animateEl(
+  el: HTMLElement | null,
+  keyframes: Keyframe[],
+  options: KeyframeAnimationOptions
+) {
+  if (el && typeof el.animate === 'function') el.animate(keyframes, options);
+}
 
 function initHero() {
   const wordmark = document.querySelector<HTMLElement>('[data-hero-wordmark]');
@@ -15,28 +23,33 @@ function initHero() {
   const heroEl = document.querySelector<HTMLElement>('[data-hero]');
 
   if (prefersReduced) {
-    // Aparición instantánea, sin efectos de scroll.
     [wordmark, portrait, ...intro].forEach((el) => {
       if (el) el.style.opacity = '1';
     });
     return;
   }
 
-  // 1) Secuencia de entrada al cargar.
-  if (wordmark) {
-    animate(wordmark, { opacity: [0, 1], y: [28, 0] }, { duration: 0.6, easing: [0.22, 1, 0.36, 1] });
-  }
-  if (portrait) {
-    animate(portrait, { opacity: [0, 1], scale: [1.03, 1] }, { duration: 0.7, delay: 0.15, easing: [0.22, 1, 0.36, 1] });
-  }
+  // 1) Secuencia de entrada (Web Animations API nativa).
+  animateEl(
+    wordmark,
+    [{ opacity: 0, transform: 'translateY(28px)' }, { opacity: 1, transform: 'translateY(0)' }],
+    { duration: 600, easing: EASE, fill: 'both' }
+  );
+  animateEl(
+    portrait,
+    [{ opacity: 0, transform: 'scale(1.03)' }, { opacity: 1, transform: 'scale(1)' }],
+    { duration: 700, delay: 150, easing: EASE, fill: 'both' }
+  );
   intro.forEach((el, i) => {
-    animate(el, { opacity: [0, 1], y: [12, 0] }, { duration: 0.5, delay: 0.3 + i * 0.08, easing: 'ease-out' });
+    // fill 'backwards' para que, tras la entrada, el scroll controle la opacidad.
+    animateEl(
+      el,
+      [{ opacity: 0, transform: 'translateY(12px)' }, { opacity: 1, transform: 'translateY(0)' }],
+      { duration: 500, delay: 300 + i * 80, easing: 'ease-out', fill: 'backwards' }
+    );
   });
 
-  // 2) Efectos al hacer scroll (marcados pero controlados):
-  //    - el nombre sube más rápido, deriva a la izquierda y se desvanece;
-  //    - el retrato sube más lento, se reduce un poco y se atenúa;
-  //    - eyebrow y status line se funden pronto.
+  // 2) Efectos al hacer scroll (rAF, cálculo manual desde scrollY / alto del hero).
   if (heroEl && wordmarkPx && portraitPx) {
     let ticking = false;
 

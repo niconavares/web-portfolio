@@ -51,6 +51,7 @@ export const projects: Project[] = [
       { src: '/assets/proyectos/socempire-2.png', caption: { es: 'Dashboard T-Pot: 1M+ ataques, países y reputación de IPs', en: 'T-Pot dashboard: 1M+ attacks, countries and IP reputation' } },
       { src: '/assets/proyectos/socempire-3.png', caption: { es: 'Redtail/XMRig — Joe Sandbox: MALICIOUS 76/100, YARA Xmrig', en: 'Redtail/XMRig — Joe Sandbox: MALICIOUS 76/100, YARA Xmrig' } },
       { src: '/assets/proyectos/socempire-4.png', caption: { es: 'Credenciales probadas por los atacantes (tagclouds de usuario/contraseña)', en: 'Credentials tried by attackers (username/password tag clouds)' } },
+      { src: '/assets/proyectos/socempire-5.png', caption: { es: 'Attack Map en tiempo real: live feed de ataques con IP, reputación, protocolo y honeypot', en: 'Real-time Attack Map: live feed with IP, reputation, protocol and honeypot' } },
     ],
   },
   {
@@ -235,6 +236,114 @@ export const projects: Project[] = [
       { src: '/assets/proyectos/ups-1.png', caption: { es: 'Mosaico gowitness: hosts vivos capturados en el recon de *.ups.com', en: 'gowitness montage: live hosts captured during *.ups.com recon' } },
     ],
   },
+  {
+    index: '09',
+    name: 'Criptografía Aplicada',
+    tagline: {
+      es: '15 ejercicios prácticos — del cifrado simétrico a firmas digitales',
+      en: '15 hands-on exercises — from symmetric encryption to digital signatures',
+    },
+    meta: {
+      es: 'Proyecto KeepCoding · Enero 2026',
+      en: 'KeepCoding Project · January 2026',
+    },
+    bullets: [
+      {
+        es: '15 retos resueltos en Python cubriendo el espectro completo de criptografía aplicada: AES-CBC y AES-GCM (cifrado simétrico), ChaCha20-Poly1305 (AEAD), RSA-OAEP (asimétrico), firmas digitales (RSA y Ed25519), JWT (seguridad de tokens), HMAC, HKDF (derivación de claves), hashing (SHA-2/SHA-3, efecto avalancha), PGP/GPG y bloques TR-31 (entornos bancarios).',
+        en: '15 challenges solved in Python covering the full applied cryptography spectrum: AES-CBC and AES-GCM (symmetric), ChaCha20-Poly1305 (AEAD), RSA-OAEP (asymmetric), digital signatures (RSA and Ed25519), JWT (token security), HMAC, HKDF (key derivation), hashing (SHA-2/SHA-3, avalanche effect), PGP/GPG and TR-31 key blocks (banking environments).',
+      },
+      {
+        es: 'Incluye análisis de seguridad de contraseñas (Argon2 vs SHA-1), diseño de API REST segura con AES-GCM, y un escenario corporativo de correo cifrado y firmado con GPG.',
+        en: 'Includes password security analysis (Argon2 vs SHA-1), secure REST API design with AES-GCM, and a corporate email scenario with encrypted and signed messages using GPG.',
+      },
+    ],
+    stack: ['Python', 'AES', 'RSA', 'ChaCha20', 'Ed25519', 'JWT', 'GPG', 'HMAC', 'HKDF'],
+    github: 'https://github.com/niconavares/criptografia',
+  },
+  {
+    index: '10',
+    name: 'Machine Learning · Ciberseguridad',
+    tagline: {
+      es: 'Clasificación supervisada sobre 40.000 incidencias de ciberataques',
+      en: 'Supervised classification on 40,000 cyber-attack incidents',
+    },
+    meta: {
+      es: 'Proyecto KeepCoding · Abril 2026',
+      en: 'KeepCoding Project · April 2026',
+    },
+    bullets: [
+      {
+        es: 'Problema de clasificación supervisada sobre un dataset real de 40.000 incidencias y 25 columnas: predecir la acción tomada (Blocked, Ignored, Logged) ante un ciberataque. Exploración de datos, preprocesamiento (eliminación de columnas, nulos a binarios, LabelEncoder), análisis visual con histogramas y heatmaps de correlación.',
+        en: 'Supervised classification on a real dataset of 40,000 incidents and 25 columns: predicting the action taken (Blocked, Ignored, Logged) against a cyber-attack. Data exploration, preprocessing (column removal, null-to-binary, LabelEncoder), visual analysis with histograms and correlation heatmaps.',
+      },
+      {
+        es: '4 modelos entrenados: KNN, Regresión Logística, Árbol de Decisión y Random Forest. Se aplicó GridSearchCV, StandardScaler, Feature Importance y visualización del árbol. Conclusión documentada: las features del dataset no contenían información predictiva suficiente (~33% = azar con 3 clases), demostrando pensamiento crítico sobre los datos.',
+        en: '4 models trained: KNN, Logistic Regression, Decision Tree and Random Forest. Applied GridSearchCV, StandardScaler, Feature Importance and tree visualization. Documented conclusion: the dataset features did not contain sufficient predictive information (~33% = chance with 3 classes), demonstrating critical thinking about data quality.',
+      },
+    ],
+    stack: ['Python', 'scikit-learn', 'pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter'],
+    github: 'https://github.com/niconavares/Machine-Learning',
+  },
+  {
+    index: '11',
+    name: 'Recon Dashboard',
+    tagline: {
+      es: 'Pipeline de reconocimiento automatizado + dashboard Streamlit',
+      en: 'Automated recon pipeline + Streamlit dashboard',
+    },
+    meta: {
+      es: 'Herramienta propia · 2026',
+      en: 'Custom tool · 2026',
+    },
+    bullets: [
+      {
+        es: 'Pipeline de reconocimiento automatizado para Bug Bounty y Red Team: un solo comando lanza 20+ herramientas (subfinder, nuclei, ffuf, nmap, masscan, httpx…) y alimenta un dashboard Streamlit interactivo para gestionar campañas completas.',
+        en: 'Automated recon pipeline for Bug Bounty and Red Team: a single command launches 20+ tools (subfinder, nuclei, ffuf, nmap, masscan, httpx…) and feeds an interactive Streamlit dashboard to manage full campaigns.',
+      },
+    ],
+    stack: ['Bash', 'Python', 'Streamlit', 'Docker', 'Subfinder', 'Nuclei', 'FFuf', 'Nmap'],
+    github: 'https://github.com/niconavares/recon-dashboard',
+  },
+  {
+    index: '12',
+    name: 'NanoClaw',
+    tagline: {
+      es: 'Agente IA multi-plataforma con Anthropic Agents SDK',
+      en: 'Multi-platform AI agent with Anthropic Agents SDK',
+    },
+    meta: {
+      es: 'Proyecto personal · 2026',
+      en: 'Personal project · 2026',
+    },
+    bullets: [
+      {
+        es: 'Alternativa ligera a OpenClaw que ejecuta agentes IA en contenedores aislados por seguridad. Se conecta a WhatsApp, Telegram, Slack, Discord y Gmail, con memoria persistente y tareas programadas. Construido sobre el SDK de Agentes de Anthropic.',
+        en: 'Lightweight alternative to OpenClaw that runs AI agents in isolated containers for security. Connects to WhatsApp, Telegram, Slack, Discord and Gmail, with persistent memory and scheduled jobs. Built on Anthropic\'s Agents SDK.',
+      },
+    ],
+    stack: ['Python', 'Anthropic SDK', 'Docker', 'WhatsApp', 'Telegram', 'Slack', 'Discord'],
+    github: 'https://github.com/niconavares/nanoclaw',
+  },
+  {
+    index: '13',
+    name: 'Infraestructura y Servicios',
+    tagline: {
+      es: '5 despliegues reales: VPN, cloud, monitorización, gestión y HTTPS',
+      en: '5 real deployments: VPN, cloud, monitoring, management and HTTPS',
+    },
+    meta: {
+      es: 'Proyectos KeepCoding · 2025–2026',
+      en: 'KeepCoding Projects · 2025–2026',
+    },
+    bullets: [
+      {
+        es: 'Servidor OpenVPN completo con CA propia, certificados de servidor/cliente y pruebas de conexión. Nextcloud con MySQL en Docker Compose (almacenamiento cloud self-hosted). Zabbix 7.0 con MySQL 8 para monitorización de infraestructura. Redmine 6.1 instalación manual con Ruby/rbenv/MariaDB/Passenger. Apache con HTTPS, Let\'s Encrypt y dominio DuckDNS accesible desde Internet.',
+        en: 'Full OpenVPN server with custom CA, server/client certificates and connection tests. Nextcloud with MySQL on Docker Compose (self-hosted cloud storage). Zabbix 7.0 with MySQL 8 for infrastructure monitoring. Redmine 6.1 manual installation with Ruby/rbenv/MariaDB/Passenger. Apache with HTTPS, Let\'s Encrypt and DuckDNS domain accessible from the Internet.',
+      },
+    ],
+    stack: ['OpenVPN', 'Docker', 'Nextcloud', 'Zabbix', 'Redmine', 'Apache', 'Let\'s Encrypt'],
+    github: 'https://github.com/niconavares/openvpn-server',
+  },
 ];
 
 export type OtherProject = { name: string; desc: L10n; github: string };
@@ -265,11 +374,51 @@ export const otherProjects: OtherProject[] = [
     github: 'https://github.com/niconavares/AuditPro',
   },
   {
-    name: 'Bug Bounty Machine',
+    name: 'Auditoría WebGoat',
     desc: {
-      es: 'Pipeline de recon automatizado en 6 fases',
-      en: 'Automated recon pipeline in 6 phases',
+      es: 'Ejercicios de seguridad web sobre la plataforma OWASP WebGoat',
+      en: 'Web security exercises on the OWASP WebGoat platform',
     },
-    github: 'https://github.com/niconavares/recon-dashboard',
+    github: 'https://github.com/niconavares/Auditoria-WebGoat-KeepCoding',
+  },
+  {
+    name: 'DevSecOps Lab',
+    desc: {
+      es: 'App Python para laboratorio de DevSecOps (CI/CD seguro)',
+      en: 'Python app for DevSecOps lab (secure CI/CD)',
+    },
+    github: 'https://github.com/niconavares/python-app-devsecops-ed11-niconavares',
+  },
+  {
+    name: 'Nextcloud Docker',
+    desc: {
+      es: 'Despliegue de Nextcloud + MySQL con Docker Compose',
+      en: 'Nextcloud + MySQL deployment with Docker Compose',
+    },
+    github: 'https://github.com/niconavares/nextcloud-docker',
+  },
+  {
+    name: 'Zabbix Docker',
+    desc: {
+      es: 'Zabbix 7.0 + MySQL 8 con Docker Compose (monitorización)',
+      en: 'Zabbix 7.0 + MySQL 8 with Docker Compose (monitoring)',
+    },
+    github: 'https://github.com/niconavares/zabbix-docker',
+  },
+  {
+    name: 'Redmine',
+    desc: {
+      es: 'Instalación manual de Redmine 6.1 con Ruby, rbenv, MariaDB y Passenger',
+      en: 'Manual Redmine 6.1 install with Ruby, rbenv, MariaDB and Passenger',
+    },
+    github: 'https://github.com/niconavares/redmine-manual-install',
+  },
+  {
+    name: 'Apache HTTPS',
+    desc: {
+      es: 'Servidor Apache con HTTPS, Let\'s Encrypt y dominio DuckDNS',
+      en: 'Apache server with HTTPS, Let\'s Encrypt and DuckDNS domain',
+    },
+    github: 'https://github.com/niconavares/apache-https-duckdns',
   },
 ];

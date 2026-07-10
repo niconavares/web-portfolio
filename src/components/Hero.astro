@@ -21,17 +21,20 @@ import { hero } from '../data/site';
     class="absolute bottom-0 right-0 z-20 flex justify-end will-change-transform"
     style="transform: translateY(var(--parallax, 0px)) scale(var(--pscale, 1)); transform-origin: bottom right;"
   >
-    <img
-      data-hero-portrait
-      src="/nico_cutout.png"
-      alt="Nicolás Navares, analista SOC / Blue Team, retrato de perfil."
-      width="997"
-      height="874"
-      fetchpriority="high"
-      decoding="async"
-      class="h-auto w-[min(86vw,26rem)] max-h-[62svh] object-contain sm:w-[min(58vw,34rem)] sm:max-h-[86svh] lg:w-[min(46vw,40rem)] lg:max-h-[94svh]"
-      style="filter: grayscale(1) contrast(1.06) brightness(1.03); -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 14%, #000 42%), linear-gradient(to bottom, #000 78%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 14%, #000 42%), linear-gradient(to bottom, #000 78%, transparent 100%); mask-composite: intersect;"
-    />
+    <picture>
+      <source srcset="/nico_cutout.webp" type="image/webp" />
+      <img
+        data-hero-portrait
+        src="/nico_cutout.png"
+        alt="Nicolás Navares, analista SOC / Blue Team, retrato de perfil."
+        width="997"
+        height="874"
+        fetchpriority="high"
+        decoding="async"
+        class="h-auto w-[min(86vw,26rem)] max-h-[62svh] object-contain sm:w-[min(58vw,34rem)] sm:max-h-[86svh] lg:w-[min(46vw,40rem)] lg:max-h-[94svh]"
+        style="filter: grayscale(1) contrast(1.06) brightness(1.03); -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 14%, #000 42%), linear-gradient(to bottom, #000 78%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 14%, #000 42%), linear-gradient(to bottom, #000 78%, transparent 100%); mask-composite: intersect;"
+      />
+    </picture>
   </div>
 
   <div class="relative z-10 mx-auto flex w-full max-w-page flex-col px-5 sm:px-8">

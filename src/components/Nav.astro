@@ -70,4 +70,30 @@ import { contact, nav } from '../data/site';
       localStorage.setItem('lang', next);
     } catch (e) {}
   });
+
+  // Scrollspy: resalta el enlace de la sección activa.
+  const links = Array.from(
+    document.querySelectorAll<HTMLAnchorElement>('nav a[href^="#"]')
+  ).filter((a) => a.getAttribute('href') !== '#top');
+  const targets = links
+    .map((a) => ({ a, el: document.querySelector<HTMLElement>(a.getAttribute('href') || '') }))
+    .filter((t) => t.el)
+    .sort((x, y) => x.el!.offsetTop - y.el!.offsetTop);
+
+  let ticking = false;
+  const spy = () => {
+    const y = window.scrollY + window.innerHeight * 0.35;
+    let active: (typeof targets)[number] | null = null;
+    for (const t of targets) if (t.el!.offsetTop <= y) active = t;
+    links.forEach((a) => a.classList.toggle('nav-active', !!active && a === active.a));
+    ticking = false;
+  };
+  const onScroll = () => {
+    if (!ticking) {
+      ticking = true;
+      requestAnimationFrame(spy);
+    }
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  spy();
 </script>

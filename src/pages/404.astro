@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { contact } from '../data/site';
+---
+<Base title="404 · Nicolás Navares">
+  <main class="flex min-h-[100svh] flex-col items-center justify-center px-5 text-center">
+    <p class="font-mono text-sm text-steel">
+      <span data-lang-es>&gt; error 404 · recurso no encontrado</span>
+      <span data-lang-en>&gt; error 404 · resource not found</span>
+    </p>
+    <h1 class="mt-4 font-display text-6xl font-bold text-paper sm:text-8xl">404</h1>
+    <p class="mt-4 max-w-md font-body text-base text-paper/70">
+      <span data-lang-es>Esta página no existe o se movió. Como un paquete que nunca llegó al SIEM.</span>
+      <span data-lang-en>This page doesn't exist or was moved. Like a packet that never reached the SIEM.</span>
+    </p>
+    <a
+      href="/"
+      class="mt-8 inline-flex items-center gap-2 rounded-md border border-steel/60 bg-steel/10 px-5 py-3 font-mono text-sm text-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-steel hover:bg-steel/20"
+    >
+      <span data-lang-es>← Volver al inicio</span>
+      <span data-lang-en>← Back home</span>
+    </a>
+
+    <p class="mt-10 font-mono text-xs text-muted">
+      {contact.name} · <span data-lang-es>Analista SOC / Blue Team</span><span data-lang-en>SOC Analyst / Blue Team</span>
+    </p>
+  </main>
+</Base>

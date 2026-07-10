@@ -58,6 +58,15 @@
     display: none;
   }
 
+  /* Nav: enlace de la sección activa (scrollspy). */
+  .nav-active {
+    color: var(--paper);
+    text-decoration: underline;
+    text-decoration-color: var(--steel);
+    text-underline-offset: 6px;
+    text-decoration-thickness: 1.5px;
+  }
+
   /* Reveal fade-up controlado por IntersectionObserver (scripts/reveal.ts) */
   [data-reveal] {
     opacity: 0;
