@@ -136,6 +136,30 @@ export const projects: Project[] = [
   },
   {
     index: '05',
+    name: 'Análisis de Malware · Detección YARA',
+    tagline: {
+      es: 'Detección estática + análisis de ransomware en sandbox',
+      en: 'Static detection + ransomware sandbox analysis',
+    },
+    meta: {
+      es: 'Proyecto KeepCoding · Mayo 2026',
+      en: 'KeepCoding Project · May 2026',
+    },
+    bullets: [
+      {
+        es: 'Sistema de detección estática que compila 1.641 reglas YARA de 5 fuentes de inteligencia (CAPEv2, Reversing Labs, Yara-Rules Project, BartBlaze, Elastic Security) mediante un script en Python, y las ejecuta sobre 101 muestras reales de MalwareBazaar. Resultado: 98/101 detectadas (97,03%), clasificando familias concretas — WannaCry, AsyncRAT, NjRAT, RedLine, IcedID, XWorm, DCRat, Stealc y Cobalt Strike.',
+        en: 'Static detection system that compiles 1,641 YARA rules from 5 threat-intel sources (CAPEv2, Reversing Labs, Yara-Rules Project, BartBlaze, Elastic Security) via a Python script, and runs them against 101 real MalwareBazaar samples. Result: 98/101 detected (97.03%), classifying specific families — WannaCry, AsyncRAT, NjRAT, RedLine, IcedID, XWorm, DCRat, Stealc and Cobalt Strike.',
+      },
+      {
+        es: 'Complementado con análisis dinámico de una muestra de ransomware en sandbox profesional (CAPEv2), documentando comportamiento e IOCs.',
+        en: 'Complemented with dynamic analysis of a ransomware sample in a professional sandbox (CAPEv2), documenting behavior and IOCs.',
+      },
+    ],
+    stack: ['YARA', 'Python', 'MalwareBazaar', 'CAPEv2', 'MISP', 'Threat Intel', 'IOCs'],
+    github: 'https://github.com/niconavares/Analisis-de-Malware',
+  },
+  {
+    index: '06',
     name: 'Operación Shadow Surge',
     tagline: {
       es: 'Red Team con evasión de EDR',
@@ -160,7 +184,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    index: '06',
+    index: '07',
     name: 'Pentesting · Metasploitable 2',
     tagline: {
       es: 'Auditoría caja negra — 13 vulnerabilidades, acceso root',
@@ -189,7 +213,7 @@ export const projects: Project[] = [
     ],
   },
   {
-    index: '07',
+    index: '08',
     name: 'Auditoría Bug Bounty · UPS (HackerOne)',
     tagline: {
       es: 'Reconocimiento y análisis de vulnerabilidades',
