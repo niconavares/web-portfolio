@@ -12,7 +12,7 @@ const {
 } = Astro.props;
 
 // URLs absolutas derivadas de `site` en astro.config (un único lugar que cambiar).
-const siteUrl = Astro.site ?? new URL('https://navares.vercel.app');
+const siteUrl = Astro.site ?? new URL('https://nicolasnavares.vercel.app');
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).href;
 const ogImageURL = new URL('/og.png', siteUrl).href;
 ---
