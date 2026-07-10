@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo *)",
+      "Bash(sips -g hasAlpha -g pixelWidth -g pixelHeight /Users/nico/web-portfolio/nico_cutout.png)",
+      "Bash(npm -v)",
+      "Bash(git --version)",
+      "Bash(cp nico_cutout.png /tmp/keep_cutout.png)",
+      "Bash(python3 -c \"import pypdf; print\\('pypdf ok'\\)\")",
+      "Bash(python3 -c \"import PyPDF2; print\\('PyPDF2 ok'\\)\")",
+      "Bash(python3 -c \"import fitz; print\\('fitz ok'\\)\")",
+      "Bash(python3 -c \"import pdfplumber; print\\('pdfplumber ok'\\)\")",
+      "Bash(python3 -m pip install --quiet --target ./pdflib pypdf)",
+      "Bash(python3 -c 'import sys;sys.path.insert\\(0,'\\\\''pdflib'\\\\''\\);from pypdf import PdfReader *)",
+      "Bash(npm run *)",
+      "Bash(cp \"/Users/nico/Desktop/files/CV_Nicolas_Navares_SOC_Diseno.pdf\" public/cv/CV_Nicolas_Navares_SOC_ES.pdf)",
+      "Bash(cp \"/Users/nico/Desktop/files/CV_Nicolas_Navares_Diseno_English.pdf\" public/cv/CV_Nicolas_Navares_SOC_EN.pdf)",
+      "Bash(cp __TRACKED_VAR__/blueteam_LOG_HONEYPOT_SIEM.png public/assets/proyectos/siem-cowrie.png)",
+      "Bash(cp __TRACKED_VAR__/blueteam_LOG_SURICATA_SIEM.png public/assets/proyectos/siem-suricata.png)",
+      "Bash(ls -la public/assets/proyectos/)",
+      "Bash(mkdir -p upsimg)",
+      "Bash(python3 -c ' *)",
+      "Bash(sort -k5 -n -r)",
+      "Bash(awk '{print $5, $NF}')",
+      "Bash(python3 -m pip install --quiet --target /private/tmp/claude-501/-Users-nico-web-portfolio/86d09746-6427-4daa-abfc-963e0bbf8d60/scratchpad/pdflib pypdf)",
+      "Bash(mkdir -p __TRACKED_VAR__/upsimg)"
+    ]
+  }
+}

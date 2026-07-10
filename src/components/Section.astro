@@ -1,0 +1,19 @@
+---
+interface Props {
+  id: string;
+  es: string;
+  en: string;
+  index: string; // etiqueta mono tipo "02"
+}
+const { id, es, en, index } = Astro.props;
+---
+<section id={id} class="mx-auto max-w-page px-5 py-20 sm:px-8 sm:py-28">
+  <header class="mb-10 flex items-baseline gap-4 border-b border-line pb-5 sm:mb-14" data-reveal>
+    <span class="font-mono text-sm text-steel">{index}</span>
+    <h2 class="font-display text-2xl font-bold tracking-tight text-paper sm:text-4xl">
+      <span data-lang-es>{es}</span>
+      <span data-lang-en>{en}</span>
+    </h2>
+  </header>
+  <slot />
+</section>

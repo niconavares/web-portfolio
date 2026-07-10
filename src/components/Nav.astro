@@ -1,0 +1,73 @@
+---
+import { contact, nav } from '../data/site';
+---
+<header class="fixed inset-x-0 top-0 z-50">
+  <nav
+    class="mx-auto flex max-w-page items-center justify-between px-5 py-4 sm:px-8 sm:py-5"
+    aria-label="Principal"
+  >
+    <a
+      href="#top"
+      class="group text-paper transition-colors hover:text-steel"
+      aria-label={`${contact.name} — inicio`}
+    >
+      <!-- Icono ciberseguridad: escudo Blue Team con check de defensa. -->
+      <svg
+        width="26"
+        height="26"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 2.5 L19.5 5.5 V11 C19.5 15.6 16.3 19.6 12 21.5 C7.7 19.6 4.5 15.6 4.5 11 V5.5 Z" />
+        <path d="M8.75 11.75 L11 14 L15.25 9.5" />
+      </svg>
+    </a>
+
+    <div class="flex items-center gap-4 sm:gap-7">
+      <ul class="flex items-center gap-4 font-mono text-xs text-muted sm:gap-7 sm:text-sm">
+        {
+          nav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="transition-colors hover:text-paper focus-visible:text-paper"
+              >
+                <span data-lang-es>{item.label.es}</span>
+                <span data-lang-en>{item.label.en}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <button
+        id="lang-toggle"
+        type="button"
+        class="font-mono text-xs font-semibold tracking-wider text-muted transition-colors hover:text-steel sm:text-sm"
+        aria-label="Cambiar idioma / Switch language"
+      >
+        <span data-lang-es>EN</span>
+        <span data-lang-en>ES</span>
+      </button>
+    </div>
+  </nav>
+  <div class="mx-auto h-px max-w-page bg-line/70"></div>
+</header>
+
+<script>
+  const btn = document.getElementById('lang-toggle');
+  btn?.addEventListener('click', () => {
+    const root = document.documentElement;
+    const next = root.getAttribute('data-lang') === 'en' ? 'es' : 'en';
+    root.setAttribute('data-lang', next);
+    root.setAttribute('lang', next);
+    try {
+      localStorage.setItem('lang', next);
+    } catch (e) {}
+  });
+</script>

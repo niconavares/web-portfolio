@@ -1,0 +1,37 @@
+---
+import Section from './Section.astro';
+import { experience, ui } from '../data/site';
+---
+<Section id="experience" es={ui.sections.experience.es} en={ui.sections.experience.en} index="03">
+  <ol class="relative flex flex-col">
+    {
+      experience.map((job, i) => (
+        <li
+          class="relative grid gap-1 border-l border-line pb-10 pl-6 last:pb-0 sm:grid-cols-[10rem_1fr] sm:gap-x-8 sm:pl-8"
+          data-reveal
+          style={`--reveal-delay: ${Math.min(i * 60, 240)}ms;`}
+        >
+          {/* Punto del timeline */}
+          <span class="absolute -left-[5px] top-1.5 h-[9px] w-[9px] rounded-full border border-steel bg-ink" aria-hidden="true" />
+
+          <p class="font-mono text-xs text-steel sm:pt-1">
+            <span data-lang-es>{job.period.es}</span>
+            <span data-lang-en>{job.period.en}</span>
+          </p>
+
+          <div>
+            <h3 class="font-display text-lg font-bold text-paper">
+              <span data-lang-es>{job.role.es}</span>
+              <span data-lang-en>{job.role.en}</span>
+            </h3>
+            <p class="mb-2 font-mono text-sm text-muted">{job.org}</p>
+            <p class="max-w-2xl font-body text-sm leading-relaxed text-paper/75 sm:text-base">
+              <span data-lang-es>{job.body.es}</span>
+              <span data-lang-en>{job.body.en}</span>
+            </p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</Section>

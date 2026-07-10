@@ -1,0 +1,57 @@
+---
+import Section from './Section.astro';
+import ProjectCard from './ProjectCard.astro';
+import { projects, otherProjects } from '../data/projects';
+import { contact, ui } from '../data/site';
+---
+<Section id="work" es={ui.sections.work.es} en={ui.sections.work.en} index="02">
+  <div class="flex flex-col gap-6">
+    {projects.map((p, i) => <ProjectCard project={p} delay={i === 0 ? 0 : 80} />)}
+  </div>
+
+  <!-- Otros proyectos (fila compacta, enlace individual a su repo). -->
+  <div class="mt-14" data-reveal>
+    <h3 class="mb-5 font-mono text-sm uppercase tracking-wider text-muted">
+      <span data-lang-es>{ui.otherProjects.es}</span>
+      <span data-lang-en>{ui.otherProjects.en}</span>
+    </h3>
+    <ul class="grid gap-3 sm:grid-cols-2">
+      {
+        otherProjects.map((o) => (
+          <li>
+            <a
+              href={o.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex h-full items-start gap-3 rounded-md border border-line/70 p-4 transition-colors hover:border-steel/60 hover:bg-white/[0.02]"
+            >
+              <span class="mt-0.5 font-mono text-xs text-steel">↗</span>
+              <span>
+                <span class="block font-display text-base font-bold text-paper">{o.name}</span>
+                <span class="mt-0.5 block font-body text-sm text-paper/65">
+                  <span data-lang-es>{o.desc.es}</span>
+                  <span data-lang-en>{o.desc.en}</span>
+                </span>
+              </span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Repos de infraestructura sueltos: un único enlace al perfil. -->
+    <p class="mt-6 font-body text-sm text-muted">
+      <span data-lang-es>{ui.moreRepos.es}</span>
+      <span data-lang-en>{ui.moreRepos.en}</span>
+      {' '}
+      <a
+        href={contact.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="font-mono text-steel underline-offset-4 hover:underline"
+      >
+        github.com/niconavares ↗
+      </a>
+    </p>
+  </div>
+</Section>

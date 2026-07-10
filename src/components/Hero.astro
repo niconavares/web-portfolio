@@ -1,0 +1,91 @@
+---
+import { hero } from '../data/site';
+---
+<section
+  id="top"
+  data-hero
+  class="relative flex min-h-[100svh] w-full items-center overflow-hidden"
+  aria-label="Presentación"
+>
+  <!-- Glow frío muy tenue tras el sujeto (lado derecho). -->
+  <div
+    class="pointer-events-none absolute right-[8%] top-[42%] h-[62vmin] w-[62vmin] -translate-y-1/2 rounded-full"
+    style="background: radial-gradient(circle, rgba(237,238,242,0.09) 0%, rgba(237,238,242,0.03) 42%, transparent 70%);"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Retrato a la DERECHA, fundido por su borde izquierdo hacia el nombre. -->
+  <div
+    data-hero-portrait-parallax
+    class="absolute bottom-0 right-0 z-20 flex justify-end will-change-transform"
+    style="transform: translateY(var(--parallax, 0px)) scale(var(--pscale, 1)); transform-origin: bottom right;"
+  >
+    <img
+      data-hero-portrait
+      src="/nico_cutout.png"
+      alt="Nicolás Navares, analista SOC / Blue Team, retrato de perfil."
+      width="997"
+      height="874"
+      fetchpriority="high"
+      decoding="async"
+      class="h-auto w-[min(86vw,26rem)] max-h-[62svh] object-contain sm:w-[min(58vw,34rem)] sm:max-h-[86svh] lg:w-[min(46vw,40rem)] lg:max-h-[94svh]"
+      style="filter: grayscale(1) contrast(1.06) brightness(1.03); -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 14%, #000 42%), linear-gradient(to bottom, #000 78%, transparent 100%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.35) 14%, #000 42%), linear-gradient(to bottom, #000 78%, transparent 100%); mask-composite: intersect;"
+    />
+  </div>
+
+  <div class="relative z-10 mx-auto flex w-full max-w-page flex-col px-5 sm:px-8">
+    <!-- Eyebrow + sub. -->
+    <div class="mb-6">
+      <p
+        data-hero-intro
+        class="font-mono text-sm font-semibold tracking-[0.12em] text-steel sm:text-base md:text-lg"
+      >
+        <span data-lang-es>{hero.eyebrow.es}</span>
+        <span data-lang-en>{hero.eyebrow.en}</span>
+      </p>
+      <p data-hero-intro class="mt-2 font-mono text-xs text-muted sm:text-sm md:text-base">
+        <span data-lang-es>{hero.sub.es}</span>
+        <span data-lang-en>{hero.sub.en}</span>
+      </p>
+    </div>
+
+    <!-- Nombre NICOLÁS / NAVARES, alineado a la izquierda; su borde derecho
+         se funde bajo el retrato. -->
+    <div
+      data-hero-wordmark-parallax
+      class="pointer-events-none will-change-transform"
+      style="transform: translate(var(--drift, 0px), var(--parallax, 0px));"
+      aria-hidden="true"
+    >
+      <span
+        data-hero-wordmark
+        class="block select-none whitespace-nowrap font-display font-bold uppercase leading-[0.9]"
+        style="font-size: clamp(2.5rem, 11.5vw, 9.5rem); letter-spacing: -0.015em; background: linear-gradient(180deg, #E4E6EB 0%, #C2C5CD 46%, #8C909A 100%); -webkit-background-clip: text; background-clip: text; color: transparent;"
+      >
+        Nicolás<br />Navares
+      </span>
+    </div>
+  </div>
+
+  <!-- Status line mono (datos reales), abajo, tipo consola SOC. -->
+  <div class="absolute inset-x-0 bottom-6 z-30 mx-auto max-w-page px-5 sm:bottom-8 sm:px-8">
+    <div
+      class="mx-auto mb-4 h-px w-full max-w-page bg-gradient-to-r from-transparent via-line to-transparent"
+    >
+    </div>
+    <p
+      data-hero-intro
+      class="overflow-x-auto whitespace-nowrap font-mono text-xs text-paper/85 sm:text-sm md:text-base"
+      style="scrollbar-width: none;"
+    >
+      <span class="text-steel">&gt;</span>
+      <span data-lang-es>{hero.status.es.replace(/^>\s*/, '')}</span>
+      <span data-lang-en>{hero.status.en.replace(/^>\s*/, '')}</span>
+    </p>
+  </div>
+</section>
+
+<script>
+  import '../components/HeroParallax.ts';
+</script>

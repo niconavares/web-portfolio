@@ -1,0 +1,25 @@
+---
+import Section from './Section.astro';
+import { skills, ui } from '../data/site';
+---
+<Section id="skills" es={ui.sections.skills.es} en={ui.sections.skills.en} index="04">
+  <div class="grid gap-8 sm:grid-cols-2">
+    {
+      skills.map((group, i) => (
+        <div data-reveal style={`--reveal-delay: ${Math.min(i * 80, 240)}ms;`}>
+          <h3 class="mb-4 font-mono text-sm uppercase tracking-wider text-steel">
+            <span data-lang-es>{group.title.es}</span>
+            <span data-lang-en>{group.title.en}</span>
+          </h3>
+          <ul class="flex flex-wrap gap-2">
+            {group.tags.map((tag) => (
+              <li class="rounded border border-line bg-white/[0.015] px-2.5 py-1 font-mono text-xs text-paper/75 transition-colors hover:border-steel/50 hover:text-paper">
+                {tag}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</Section>

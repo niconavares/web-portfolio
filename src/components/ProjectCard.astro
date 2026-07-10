@@ -1,0 +1,108 @@
+---
+import type { Project } from '../data/projects';
+import { ui } from '../data/site';
+interface Props {
+  project: Project;
+  delay?: number;
+}
+const { project, delay = 0 } = Astro.props;
+const p = project;
+---
+<article
+  class:list={[
+    'group relative flex flex-col rounded-lg border bg-white/[0.015] p-6 transition-all duration-300 sm:p-8',
+    p.flagship
+      ? 'border-line hover:border-steel/70'
+      : 'border-line/70 hover:border-steel/60',
+    'hover:-translate-y-1 hover:bg-white/[0.03]',
+  ]}
+  data-reveal
+  style={`--reveal-delay: ${delay}ms;`}
+>
+  {
+    p.flagship && (
+      <span class="mb-4 inline-flex w-fit items-center gap-2 rounded-full border border-steel/40 px-3 py-1 font-mono text-[0.7rem] uppercase tracking-wider text-steel">
+        <span class="h-1.5 w-1.5 rounded-full bg-steel" />
+        <span data-lang-es>Proyecto insignia</span>
+        <span data-lang-en>Flagship project</span>
+      </span>
+    )
+  }
+
+  <div class="mb-1 flex items-start justify-between gap-4">
+    <div>
+      <div class="flex items-baseline gap-3">
+        <span class="font-mono text-sm text-muted">{p.index}</span>
+        <h3 class="font-display text-xl font-bold text-paper sm:text-2xl">{p.name}</h3>
+      </div>
+      <p class="mt-1 font-body text-base text-paper/70">
+        <span data-lang-es>{p.tagline.es}</span>
+        <span data-lang-en>{p.tagline.en}</span>
+      </p>
+    </div>
+    {
+      p.github && (
+        <a
+          href={p.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="shrink-0 rounded-md border border-line px-3 py-1.5 font-mono text-xs text-muted transition-colors hover:border-steel hover:text-paper"
+          aria-label={`${ui.viewRepo.es} — ${p.name}`}
+        >
+          {ui.viewRepo.es} ↗
+        </a>
+      )
+    }
+  </div>
+
+  <p class="mb-5 font-mono text-xs text-steel/90">
+    <span data-lang-es>{p.meta.es}</span>
+    <span data-lang-en>{p.meta.en}</span>
+  </p>
+
+  <div class="mb-6 flex flex-col gap-3">
+    {
+      p.bullets.map((b) => (
+        <p class="font-body text-sm leading-relaxed text-paper/80 sm:text-base">
+          <span data-lang-es set:html={b.es} />
+          <span data-lang-en set:html={b.en} />
+        </p>
+      ))
+    }
+  </div>
+
+  {
+    p.shots && p.shots.length > 0 && (
+      <div class="mb-6 grid gap-3 sm:grid-cols-2">
+        {p.shots.map((shot) => (
+          <figure data-shot class="group/shot m-0 overflow-hidden rounded-md border border-line">
+            <a href={shot.src} target="_blank" rel="noopener noreferrer" class="block">
+              <img
+                src={shot.src}
+                alt={shot.caption.es}
+                loading="lazy"
+                decoding="async"
+                class="aspect-video w-full bg-ink object-cover object-top transition-transform duration-500 group-hover/shot:scale-[1.03]"
+                onerror="this.closest('[data-shot]').remove()"
+              />
+              <figcaption class="border-t border-line bg-ink/70 px-3 py-2 font-mono text-[0.7rem] text-muted">
+                <span data-lang-es>{shot.caption.es}</span>
+                <span data-lang-en>{shot.caption.en}</span>
+              </figcaption>
+            </a>
+          </figure>
+        ))}
+      </div>
+    )
+  }
+
+  <ul class="mt-auto flex flex-wrap gap-2">
+    {
+      p.stack.map((s) => (
+        <li class="rounded border border-line bg-ink/60 px-2 py-1 font-mono text-[0.7rem] text-muted">
+          {s}
+        </li>
+      ))
+    }
+  </ul>
+</article>

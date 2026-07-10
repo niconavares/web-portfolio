@@ -1,0 +1,32 @@
+---
+import Section from './Section.astro';
+import { about, ui } from '../data/site';
+---
+<Section id="about" es={ui.sections.about.es} en={ui.sections.about.en} index="01">
+  <div class="grid gap-10 md:grid-cols-[1fr_auto] md:gap-16">
+    <p
+      class="max-w-3xl font-body text-lg leading-relaxed text-paper/90 sm:text-xl sm:leading-relaxed"
+      data-reveal
+    >
+      <span data-lang-es>{about.es}</span>
+      <span data-lang-en>{about.en}</span>
+    </p>
+    <ul class="flex flex-col gap-4 font-mono text-sm text-muted" data-reveal style="--reveal-delay: 120ms;">
+      <li class="flex flex-col">
+        <span class="text-steel">18+</span>
+        <span data-lang-es>años en el sector tecnológico</span>
+        <span data-lang-en>years in the tech sector</span>
+      </li>
+      <li class="flex flex-col">
+        <span class="text-steel">1.000.000+</span>
+        <span data-lang-es>ataques reales analizados</span>
+        <span data-lang-en>real attacks analyzed</span>
+      </li>
+      <li class="flex flex-col">
+        <span class="text-steel">KeepCoding</span>
+        <span data-lang-es>Full Stack Cybersecurity · Ed. XI</span>
+        <span data-lang-en>Full Stack Cybersecurity · Ed. XI</span>
+      </li>
+    </ul>
+  </div>
+</Section>

@@ -1,0 +1,82 @@
+---
+import Section from './Section.astro';
+import { contact, contactCta, ui } from '../data/site';
+
+const links = [
+  { label: 'Email', href: `mailto:${contact.email}`, value: contact.email },
+  { label: 'LinkedIn', href: contact.linkedin, value: 'in/nicolas-navares-cybersecurity' },
+  { label: 'GitHub', href: contact.github, value: 'github.com/niconavares' },
+];
+---
+<Section id="contact" es={ui.sections.contact.es} en={ui.sections.contact.en} index="06">
+  <div class="flex flex-col gap-8" data-reveal>
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="inline-flex items-center gap-2 rounded-full border border-steel/50 px-3 py-1 font-mono text-xs text-steel">
+        <span class="relative flex h-2 w-2">
+          <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-steel opacity-60"></span>
+          <span class="relative inline-flex h-2 w-2 rounded-full bg-steel"></span>
+        </span>
+        <span data-lang-es>{contactCta.available.es}</span>
+        <span data-lang-en>{contactCta.available.en}</span>
+      </span>
+    </div>
+
+    <div>
+      <p class="font-display text-2xl font-bold text-paper sm:text-3xl">
+        <span data-lang-es>{contactCta.headline.es}</span>
+        <span data-lang-en>{contactCta.headline.en}</span>
+      </p>
+      <p class="mt-2 font-body text-base text-paper/70">
+        <span data-lang-es>{contactCta.sub.es}</span>
+        <span data-lang-en>{contactCta.sub.en}</span>
+      </p>
+    </div>
+
+    <div>
+      <a
+        href="/cv/CV_Nicolas_Navares_SOC_ES.pdf"
+        download
+        data-lang-es
+        class="inline-flex items-center gap-2 rounded-md border border-steel/60 bg-steel/10 px-5 py-3 font-mono text-sm text-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-steel hover:bg-steel/20"
+      >
+        ↓ Descargar CV (PDF)
+      </a>
+      <a
+        href="/cv/CV_Nicolas_Navares_SOC_EN.pdf"
+        download
+        data-lang-en
+        class="inline-flex items-center gap-2 rounded-md border border-steel/60 bg-steel/10 px-5 py-3 font-mono text-sm text-paper transition-all duration-300 hover:-translate-y-0.5 hover:border-steel hover:bg-steel/20"
+      >
+        ↓ Download CV (PDF)
+      </a>
+    </div>
+
+    <ul class="grid gap-3 sm:grid-cols-3">
+      {
+        links.map((l) => (
+          <li>
+            <a
+              href={l.href}
+              target={l.href.startsWith('mailto') ? undefined : '_blank'}
+              rel="noopener noreferrer"
+              class="flex flex-col gap-1 rounded-md border border-line p-4 transition-all duration-300 hover:-translate-y-0.5 hover:border-steel/70 hover:bg-white/[0.02]"
+            >
+              <span class="font-mono text-xs uppercase tracking-wider text-steel">{l.label} ↗</span>
+              <span class="break-all font-body text-sm text-paper/80">{l.value}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</Section>
+
+<footer class="mx-auto max-w-page border-t border-line px-5 py-8 sm:px-8">
+  <div class="flex flex-col items-start justify-between gap-2 font-mono text-xs text-muted sm:flex-row sm:items-center">
+    <span>© 2026 {contact.name}</span>
+    <span>
+      <span data-lang-es>Analista SOC · Blue Team · Tenerife (remoto)</span>
+      <span data-lang-en>SOC Analyst · Blue Team · Tenerife (remote)</span>
+    </span>
+  </div>
+</footer>

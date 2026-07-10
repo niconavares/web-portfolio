@@ -1,0 +1,17 @@
+# build output
+dist/
+# dependencies
+node_modules/
+# astro
+.astro/
+# environment
+.env
+.env.production
+.DS_Store
+# vercel
+.vercel/
+
+# source assets kept out of /public (working copies)
+/PLAN_DISENO_PORTFOLIO.md
+/CONTENIDO_WEB.md
+/hero_mockup.png
