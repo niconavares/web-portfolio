@@ -158,6 +158,11 @@ export const projects: Project[] = [
     ],
     stack: ['YARA', 'Python', 'MalwareBazaar', 'CAPEv2', 'MISP', 'Threat Intel', 'IOCs'],
     github: 'https://github.com/niconavares/Analisis-de-Malware',
+    shots: [
+      { src: '/assets/proyectos/malware-1.png', caption: { es: '1.641 reglas YARA compiladas y 97,03% de detección sobre 101 muestras reales de MalwareBazaar', en: '1,641 YARA rules compiled, 97.03% detection over 101 real MalwareBazaar samples' } },
+      { src: '/assets/proyectos/malware-2.png', caption: { es: 'Cadena de ataque de BadRabbit mapeada a MITRE ATT&CK (análisis dinámico en sandbox CAPEv2)', en: 'BadRabbit attack chain mapped to MITRE ATT&CK (dynamic analysis in CAPEv2 sandbox)' } },
+      { src: '/assets/proyectos/malware-3.png', caption: { es: 'IOCs exportados a MISP y stack de análisis (CAPEv2, KVM, VirusTotal, MITRE ATT&CK)', en: 'IOCs exported to MISP and analysis stack (CAPEv2, KVM, VirusTotal, MITRE ATT&CK)' } },
+    ],
   },
   {
     index: '06',
@@ -259,6 +264,11 @@ export const projects: Project[] = [
     ],
     stack: ['Python', 'AES', 'RSA', 'ChaCha20', 'Ed25519', 'JWT', 'GPG', 'HMAC', 'HKDF'],
     github: 'https://github.com/niconavares/criptografia',
+    shots: [
+      { src: '/assets/proyectos/cripto-1.png', caption: { es: 'KeyStore JCEKS con claves EC, RSA-4096, AES-256, ChaCha20 y HMAC-SHA256/512', en: 'JCEKS keystore with EC, RSA-4096, AES-256, ChaCha20 and HMAC-SHA256/512 keys' } },
+      { src: '/assets/proyectos/cripto-2.png', caption: { es: 'Cifrado autenticado AES-GCM con datos asociados (AEAD), nonce y MAC', en: 'AES-GCM authenticated encryption with associated data (AEAD), nonce and MAC' } },
+      { src: '/assets/proyectos/cripto-3.png', caption: { es: 'Importación y parseo de un Key Block TR-31 (gestión de claves en entornos bancarios)', en: 'Import and parse of a TR-31 key block (key management in banking environments)' } },
+    ],
   },
   {
     index: '10',
@@ -283,6 +293,11 @@ export const projects: Project[] = [
     ],
     stack: ['Python', 'scikit-learn', 'pandas', 'NumPy', 'Matplotlib', 'Seaborn', 'Jupyter'],
     github: 'https://github.com/niconavares/Machine-Learning',
+    shots: [
+      { src: '/assets/proyectos/ml-1.png', caption: { es: 'Dataset real de intrusiones de red: puertos, protocolo, anomaly scores y tipo de ataque', en: 'Real network-intrusion dataset: ports, protocol, anomaly scores and attack type' } },
+      { src: '/assets/proyectos/ml-2.png', caption: { es: 'Preprocesamiento: codificación de variables categóricas con LabelEncoder', en: 'Preprocessing: encoding categorical variables with LabelEncoder' } },
+      { src: '/assets/proyectos/ml-3.png', caption: { es: 'Búsqueda de hiperparámetros de KNN con GridSearchCV (accuracy ~0,34: features sin poder predictivo)', en: 'KNN hyperparameter search with GridSearchCV (accuracy ~0.34: features without predictive power)' } },
+    ],
   },
   {
     index: '11',
