@@ -147,6 +147,18 @@ export const education = {
       done: true,
     },
     {
+      name: 'Google Cybersecurity Professional Certificate',
+      status: { es: 'Completado · Google (Coursera)', en: 'Completed · Google (Coursera)' } as L10n,
+      detail: { es: 'SIEM, Python, Linux, SQL, gestión de riesgos, IDS y respuesta a incidentes', en: 'SIEM, Python, Linux, SQL, risk management, IDS and incident response' } as L10n,
+      done: true,
+    },
+    {
+      name: 'IBM Cybersecurity Certificate',
+      status: { es: 'Completado · IBM SkillsBuild', en: 'Completed · IBM SkillsBuild' } as L10n,
+      detail: { es: 'Seguridad de redes y sistemas, respuesta a incidentes y forense, operaciones de seguridad, gestión de vulnerabilidades, GRC', en: 'System & network security, incident response & forensics, security operations, vulnerability management, GRC' } as L10n,
+      done: true,
+    },
+    {
       name: 'BTL1 (Blue Team Level 1) — Security Blue Team',
       status: { es: 'En preparación (próximamente)', en: 'In preparation (coming soon)' } as L10n,
       detail: { es: '', en: '' } as L10n,
@@ -159,8 +171,8 @@ export const education = {
       en: 'Verifiable badges on Credly:',
     } as L10n,
     groups: [
-      { org: 'IBM SkillsBuild', items: 'Cybersecurity Certificate · System & Network Security · Cloud Security · Incident Response & Systems Forensics · Security Operations and Management · Vulnerability Management · Governance, Risk, Compliance & Data Privacy' },
-      { org: 'Google (Coursera)', items: 'Cybersecurity Professional Certificate V2 · IT Support Professional' },
+      { org: 'IBM SkillsBuild', items: 'System & Network Security · Cloud Security · Incident Response & Systems Forensics · Security Operations and Management · Vulnerability Management · Governance, Risk, Compliance & Data Privacy' },
+      { org: 'Google (Coursera)', items: 'IT Support Professional Certificate' },
       { org: 'Cisco', items: 'Introduction to Cybersecurity · Networking Basics · Networking Devices and Initial Configuration' },
     ],
   },

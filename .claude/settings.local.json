@@ -23,7 +23,18 @@
       "Bash(sort -k5 -n -r)",
       "Bash(awk '{print $5, $NF}')",
       "Bash(python3 -m pip install --quiet --target /private/tmp/claude-501/-Users-nico-web-portfolio/86d09746-6427-4daa-abfc-963e0bbf8d60/scratchpad/pdflib pypdf)",
-      "Bash(mkdir -p __TRACKED_VAR__/upsimg)"
+      "Bash(mkdir -p __TRACKED_VAR__/upsimg)",
+      "Bash(git add *)",
+      "Bash(git commit -q -m 'Añade proyecto Análisis de Malware \\(YARA\\) y corrige URLs OG/canonical a producción *)",
+      "Bash(git push *)",
+      "Bash(node -e ' *)",
+      "Bash(npm uninstall *)",
+      "Bash(gh api *)",
+      "Bash(grep -iE '\\\\.\\(png|jpg|jpeg|gif\\)$')",
+      "Bash(git commit -m ' *)",
+      "Bash(git fetch *)",
+      "Bash(git commit -q -m 'Apunta el SEO a nicolasnavares.vercel.app *)",
+      "Bash(git commit -q -m 'Añade capturas a Malware, Criptografía y Machine Learning \\(3 por proyecto\\) *)"
     ]
   }
 }
