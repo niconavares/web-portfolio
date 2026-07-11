@@ -94,4 +94,60 @@ import { education, contact, ui } from '../data/site';
       </div>
     </div>
   </div>
+
+  <!-- Formación insignia: el bootcamp destacado a lo ancho -->
+  <div
+    class="mt-12 rounded-lg border border-steel/40 bg-steel/[0.04] p-6 sm:p-8"
+    data-reveal
+    style="--reveal-delay: 80ms;"
+  >
+    <div class="flex flex-wrap items-center gap-3">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-steel/50 bg-steel/10 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-steel">
+        ★
+        <span data-lang-es>{education.bootcampFeatured.label.es}</span>
+        <span data-lang-en>{education.bootcampFeatured.label.en}</span>
+      </span>
+      <span class="font-mono text-xs text-muted">{education.bootcampFeatured.org} · {education.bootcamp.period}</span>
+    </div>
+
+    <h3 class="mt-4 font-display text-2xl font-bold text-paper sm:text-3xl">
+      {education.bootcampFeatured.title}
+    </h3>
+
+    <p class="mt-3 max-w-3xl font-body text-sm leading-relaxed text-paper/75">
+      <span data-lang-es>{education.bootcampFeatured.lead.es}</span>
+      <span data-lang-en>{education.bootcampFeatured.lead.en}</span>
+    </p>
+
+    <dl class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-4">
+      {
+        education.bootcampFeatured.facts.map((f) => (
+          <div class="rounded-md border border-line/70 bg-ink/40 p-3">
+            <dt class="font-display text-xl font-bold text-paper">{f.value}</dt>
+            <dd class="mt-0.5 font-body text-xs text-paper/60">
+              <span data-lang-es>{f.label.es}</span>
+              <span data-lang-en>{f.label.en}</span>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <p class="mt-6 mb-2 font-mono text-xs uppercase tracking-wider text-steel">
+      <span data-lang-es>Módulos cursados</span>
+      <span data-lang-en>Modules completed</span>
+    </p>
+    <ul class="flex flex-wrap gap-2">
+      {
+        education.bootcampFeatured.modules.map((m) => (
+          <li class="rounded border border-line px-2.5 py-1 font-mono text-xs text-paper/80">{m}</li>
+        ))
+      }
+    </ul>
+
+    <p class="mt-5 font-body text-xs leading-relaxed text-paper/60">
+      <span data-lang-es>{education.bootcampFeatured.extras.es}</span>
+      <span data-lang-en>{education.bootcampFeatured.extras.en}</span>
+    </p>
+  </div>
 </Section>

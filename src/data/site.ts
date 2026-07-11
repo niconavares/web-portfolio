@@ -130,6 +130,31 @@ export const education = {
       en: 'Modules: Cybersecurity 101 · Cryptography · Blue Team · Pentesting · OSINT · AI & Cybersecurity · Red Team · Malware Analysis · DFIR · DevSecOps',
     } as L10n,
   },
+  // Bloque destacado: el bootcamp como formación insignia (fuente: temario oficial KeepCoding).
+  bootcampFeatured: {
+    label: { es: 'Formación insignia', en: 'Flagship training' } as L10n,
+    title: 'Bootcamp Full Stack Cybersecurity',
+    org: 'KeepCoding · Ed. XI',
+    lead: {
+      es: 'La formación más intensiva y extensa de toda mi trayectoria: meses de entrenamiento práctico cubriendo el ciclo completo de la ciberseguridad —de la defensa a la ofensiva— con proyectos reales en cada módulo. No es un certificado oficial, pero es donde se ha forjado la mayor parte de lo que ves en este portfolio.',
+      en: 'The most intensive and extensive training of my whole career: months of hands-on practice covering the full cybersecurity cycle —from defense to offense— with real projects in every module. Not an official certificate, but where most of what you see in this portfolio was forged.',
+    } as L10n,
+    facts: [
+      { value: '~9 meses', label: { es: 'de duración (part-time)', en: 'long (part-time)' } as L10n },
+      { value: '12 h/sem', label: { es: 'clases en directo', en: 'live classes' } as L10n },
+      { value: '13', label: { es: 'módulos + pre-bootcamp', en: 'modules + pre-bootcamp' } as L10n },
+      { value: '1:1', label: { es: 'coaching y proyecto final', en: 'coaching & final project' } as L10n },
+    ],
+    modules: [
+      'Sistemas 101', 'Cybersecurity 101', 'Criptografía', 'Recopilación de Información (OSINT)',
+      'Pentesting', 'Blue Team', 'DFIR', 'Análisis de Malware', 'IA y Ciberseguridad',
+      'Red Team', 'DevSecOps', 'Machine Learning y Ciberseguridad',
+    ],
+    extras: {
+      es: 'Pre-bootcamp: Linux · Python · Docker · Networking · Desarrollo seguro. Master classes: «La vida de un CISO», Prompt Engineering, Desarrollo Seguro y Pitch. Acceso a bolsa de talento con +600 empresas.',
+      en: 'Pre-bootcamp: Linux · Python · Docker · Networking · Secure development. Master classes: "A CISO\'s life", Prompt Engineering, Secure Development and Pitch. Access to a talent pool of 600+ companies.',
+    } as L10n,
+  },
   previousTraining: {
     title: 'Formación técnica previa',
     titleEn: 'Previous technical training',
